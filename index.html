@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>מדריך למבחן - חדו״א 1</title>
+<title>מדריך למבחן - אלגברה לינארית</title>
 <meta name="theme-color" content="#1F2A47">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%231F2A47%22/%3E%3Cpath d=%22M38 13.5C32 11 28 15 28 23v18c0 8-4 11-9 9.5%22 fill=%22none%22 stroke=%22%23E3B95C%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%2242%22 cy=%2214.5%22 r=%224%22 fill=%22%23E3B95C%22/%3E%3Ccircle cx=%2216%22 cy=%2250%22 r=%224%22 fill=%22%23E3B95C%22/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAJlklEQVR4nOzdbXBUVx3H8XP37mM2G/IIpAESYqAFQ3mSMlBUamhTKAjFN6hoVexIO47xRUcZn2bqOFN1xtEKapWhdtTi2CpSHWxRy1gKsYRSpAmTkNgEzBMJSTbZ3ezz7vUwTFsm9H/Pvbvbm5u7v88wnU57djLhfjn3nHOXrL16aSMDeC92BkBAHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHEBCHO+XhXPkBbPl2cWyw86GJ9IDI6mO3mRaYTMI4ngPRQXSHQvs88rlylJ5bonN7ZQGR1MDY+m+kdTVsVT/aCoSI19b5rM9dJ9n00p3kdc25X9FY0pLZ/yZ45Od/Sk2E0j4EQzvWFVnX7/UtWqRY/E8h/rItwaTLR3x19rj57oS7/xHn0f6zCbPJzZ4XE6bymsVRfnXhdhTx8L9I2ZPBHFct6hK/urOwuW1TqZTJKac7Yyf6Yj/41z00x8reOg+r8YX/rs99vhvAqEoM7N8j6PYKz2yzfvAWg/LTjCS9nlsul7C+/jawYBi4lWIXFxRx/JVfY19/5dLln9A94RxK5dDYjrNr7A77dLrnQlmVvpit5JP3uN5qqmkrGg6fwe2r3PzlQozqzydOfbtKtzdoHV9IMDvC5leXz7fpNLKG10mnTzycebYucG9NetFxrukrFYNG+90MbPKuziWLLA3PVjIcimr+0L1HLtp7yz5FQc/ofrhw7NkW+4uBt9sZL3fmFtq0quQX3F8f4+vpDDX37KUbWpzS2RmSnl0fL5ro2dJtb5d67A/1dmfvDKUml1im18h8wP1wimHGZJ59xrZy6s4CjSOHJlIH/hLiJ97BsNTbxmLq+wbVzgbVriqyt/+reO3lewSueo36Tl6vsSxfb27fJamG8rhE5OHXgrHiN0ln0j4r18dC/MT9xW1Tp9X2rbWXVGc+X0hnuQPbNPMlPIljt0Nmvauj+73v9md1DKyqz/V1R/h/xJPKHu3Zr79Od+VmIyZ9Ag9LxakjatdlaXiPwY/PhLUWMbNXjwbjSUyv7pHm8378C0v4vhco3i18cqbsT+9msl1Gg0oz5+MsIxc6I6/2hZnZmX9OD66zMkfcamP6R9Jffd3AZapp49PdvbpPgIPRdJP/D7ITMz6cdy72i0cs/+FUCyL5xvxBNt3aMIf1LGuTKeVbz8T6DPrUvQG68exsk7wtq7xUPr0xWzn9uFx5Us/9XcPalqyBCPpxw5OnDXxw/obLB5HZYltllfwPR47E83JO274jvTRA+PPnwzz3anKsOaL8UeeHG/pMHsZzPJb2fqFDuGYI6czXE7eKhRWnvzz5OETkQ8vcy6vddbMsc0ulp12NjSe5sua1p7Ea+3xmfLuYmb5OJbVCL7B3mvJIX+Ob/zXJtJHTkX5LzbDWTyOD9YIHqZ0XNF9sJE/rBwHn8/5Ibf6mPbeGXDvny5WjqO+xm4TvXWjvRczB8nKcVSVC6YNfthwqQ9xkKwch9ct2MR2D6biuKvQrByH8L2ZA2MzZlc5LSw9c4jiiMRMfXo97awcR6HotjIZY6DC2msOwYBIdEb9uAzDWXrm8AhnDtxW1OT3mmPGH3C/vywdh0sQRxgzhyorx2ETvR8BKw51+JlgQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQEIcQLJyHLIk+BivBD6qXJWV4yhwC+IIRfAZb2ry+qNDg2F8ypsay8Yh/GhILoiZQ5V14/CIxwQjmDnUWHjmEH1wKGNjQcShxrpxiFaj0RjKELBsHJXlsvoALDiELBvH0gWCby2ABYeIZeNYMt+hPqBvOMVAlTXj4Eejd4hmjtbLCQaqrBnHottkuyxYkLb2IA4Ba8axYZlLfUAypXT04smKgAXj4PeUHesFR2AXryRS2KyITGcc/Cry+X9eub2i5PqB1TV/um8k2dnP/0CLT75VfKTeWeoTnIC19mDaEJueOKrK5S80ejbUu7zuqVeRHz80X4w9fTzSP5LhbmL73eKT8zasRjUwOo4yn+2Lm72b73JRC0afx9b4IU/DSvffWqKHXgyPBvXN/mtud9x1u1N9TCCcbrkUZyAifgCRQw4727vNu22dW7iV4AM+vs7z8AMFTplp5/NI39ldJBx2tDkSx8ShgaFxND3o3bzGrX381rWer+z0ah//rU/5SgoF3xHfpzz3SoSBBsbFsWOde8f6AqYTfwl/oZaRW9e67653CYe9fD46HsLBuSYGxeG0s8/fr7uMG3bdUyDb1C5nYYHE54x9u3xMg8MnMG1oZVAcW9a4y4r0LB9uMq9C/mwDeXO5d7XrD98ovV/b3eqNrsRbg3ikopVBu5WGVeIJX8WeLQV7tnjbr8SHxpWRQCqeUPhmuLJU5v+8dTOs4rmTYQaaGRRHXVUOvtCSaueSapaxU22xU23YwepgRBxlRZLPk+X9K6szU+5/w8nHfxtgoIcRa44FFTlJMPMtRiiSfuzgRASzhk5GzByh6HQ+40qnlW/+OjAwgudsuhkRx1gwJxcmwzvLz/46ea4LB6KZMCKO0UB62J+aXZLhVvY6fkuRFL19xJPK954NnvhPjEFGjDnnkJrbs7tC+svgOe79iR9lZMOgQ7Cjp6PMKLGE8uzL4d0/8Hf247wrKwadc/x3IPXP89FNK3U8dbuJjmnj+OuRXx6bHB7H05McMO79HD/6Y6iu0l4zV99X5A9R7TZxG0P+FL+DvHQ2itPxHJKqlzYyo5T5bL9oKr6tTOvK9PLVZNPPJ/iC485aR+0c+yyv5PVI/Lzc45QmY8pkVOEHGP6AcuZS7FIfmsg9Q+PgCt3siT2zVtY5hSMvdMe/fnAiZNxaBaaSiyvqmIHiSfb3c9GB0dSiKpk6Ux8cS+4/GjrwQiiWyPbUHLJh9Mzx7heW2OIqeXmtY9lCR33N9b+62HY50dqTuNCT7OxLKlhQmsC0xQHmhx81CSTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEASTEAaT/AwAA///2krm4AAAABklEQVQDAN3zv04n5xlDAAAAAElFTkSuQmCC">
-<meta name="apple-mobile-web-app-title" content="חדו״א 1">
+<meta name="apple-mobile-web-app-title" content="אלגברה לינארית">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -699,7 +699,7 @@ svg{ max-width:100%; height:auto; }
 
   <nav class="sidebar" id="sidebar" aria-label="תוכן עניינים">
     <label for="menuToggle" class="sidebar-close" aria-label="סגור תפריט">✕</label>
-    <div class="sidebar-title">מדריך למבחן - חדו״א 1</div>
+    <div class="sidebar-title">מדריך למבחן - אלגברה לינארית</div>
     <div class="sidebar-sub">שיטות פתרון כלליות - כל תרגיל</div>
 
     <div class="search-box">
@@ -741,7 +741,7 @@ svg{ max-width:100%; height:auto; }
   <main class="content">
 
     <section class="hero" id="intro">
-      <h1>מדריך פתרון כללי לכל שאלה במבחן בחשבון דיפרנציאלי ואינטגרלי 1</h1>
+      <h1>מדריך פתרון כללי לכל שאלה במבחן באלגברה לינארית</h1>
       <p>כל תרגיל מסוכם כאן לפי סוגי השאלות שבו: איך מזהים את סוג השאלה, אילו כללים להשתמש בהם, מהם שלבי הפתרון הקבועים, ומהן הטעויות הנפוצות. הכול בצורה כללית (עם a,b,x,y ופונקציות כלליות) כדי שאפשר יהיה להשתמש באותה שיטה על כל שאלה דומה, לא משנה אילו נתונים ספציפיים יופיעו במבחן.</p>
       <div class="tags"><span>פולינומים</span><span>חלוקה עם שארית</span><span>שורשים</span><span>פירוק לגורמים</span><span>שורשים רציונליים</span></div>
       <div class="callout callout-info">
