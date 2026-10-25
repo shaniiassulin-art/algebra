@@ -894,6 +894,25 @@ details.legend[open] > summary::after{ content:"לחצי לסגירה"; }
 .ai-ex-label{ font-family:'Frank Ruhl Libre',serif; font-weight:700; color:var(--indigo-2); font-size:1.08rem; margin-bottom:2px; }
 .ai-ex-und{ color:var(--ink-soft); font-size:.94rem; margin-bottom:8px; }
 .ai-ex .ai-results{ margin-top:6px; }
+
+/* ----- כפתור רענון: פינה שמאלית תחתונה (בעברית הצד השמאלי של השורות הכי פנוי) ----- */
+.refresh-btn{
+  position:fixed; z-index:21;
+  left:calc(20px + env(safe-area-inset-left, 0px)); bottom:calc(22px + env(safe-area-inset-bottom, 0px));
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.92); color:#2C3A5E; border:1.5px solid #C9C0A8;
+  box-shadow:0 3px 10px rgba(0,0,0,.14); text-decoration:none; cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.refresh-btn svg{ width:20px; height:20px; }
+.refresh-btn:hover{ border-color:#A8791E; background:#fff; }
+.refresh-btn.spin svg{ animation:refreshSpin .8s linear infinite; }
+@keyframes refreshSpin{ to{ transform:rotate(360deg); } }
+/* כפתור "למעלה" עולה מעל כפתור הרענון כדי שלא יסתירו זה את זה */
+.top-btn{ bottom:calc(76px + env(safe-area-inset-bottom, 0px)) !important; left:calc(20px + env(safe-area-inset-left, 0px)) !important; }
+@media (prefers-reduced-motion: reduce){ .refresh-btn.spin svg{ animation:none; } }
+@media print{ .refresh-btn{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -1843,6 +1862,39 @@ try {
   loadLast();
   detect();
   } catch(err){ console.error(err); }
+})();
+</script>
+
+<a href="./" class="refresh-btn" id="refreshBtn" aria-label="רענון: טעינת הגרסה העדכנית של האתר" title="רענון - טעינת הגרסה העדכנית">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><polyline points="20 4 20 9 15 9"/></svg>
+</a>
+
+<script>
+// ---- כפתור רענון: טוען את הגרסה העדכנית מהשרת (בלי עותק שמור) וחוזר לאותו מקום בעמוד ----
+(function(){
+  try {
+    var btn = document.getElementById('refreshBtn');
+    if(!btn) return;
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      btn.classList.add('spin');
+      try { localStorage.setItem('examGuideScrollY_v1', String(window.scrollY)); } catch(err){}
+      try { sessionStorage.setItem('refreshScrollY', String(window.scrollY)); } catch(err){}
+      var url = location.pathname + '?r=' + Date.now();
+      location.replace(url);
+    });
+    // אחרי רענון: חזרה לאותו מקום, ומחיקת הפרמטר מהכתובת
+    var y = null;
+    try { y = sessionStorage.getItem('refreshScrollY'); sessionStorage.removeItem('refreshScrollY'); } catch(err){}
+    if(/[?&]r=\d+/.test(location.search)){
+      try { history.replaceState(null, '', location.pathname + location.hash); } catch(err){}
+    }
+    if(y !== null){
+      var go = function(){ window.scrollTo({top: parseFloat(y) || 0, behavior: 'instant'}); };
+      requestAnimationFrame(function(){ requestAnimationFrame(go); });
+      window.addEventListener('load', function(){ setTimeout(go, 80); });
+    }
+  } catch(err){}
 })();
 </script>
 </body>
